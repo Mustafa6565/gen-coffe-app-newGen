@@ -1,16 +1,17 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import RouterLink from "./RouterLink";
-import { Container, Image, Nav, Navbar } from "react-bootstrap";
+import { Badge, Button, Container, Image, Nav, Navbar } from "react-bootstrap";
+import { StateControll } from "../Context/StateControl";
 
 export default function NavigationBar() {
     const [showMenu, setShowMenu] = useState(false);
-
+    const { favoriteEspressoIds } = useContext(StateControll)
     const navigate = [
         { id: 1, title: "Home", to: "home" },
         { id: 2, title: "About Us", to: "aboutus" },
         { id: 3, title: "Coffe's", to: "coffes" },
-        { id: 3, title: "Espresso's", to: "espressos" },
-        { id: 4, title: "Error", to: "" },
+        { id: 4, title: "Espresso's", to: "espressos" },
+        { id: 5, title: "Error", to: "" },
 
     ]
 
@@ -20,10 +21,10 @@ export default function NavigationBar() {
 
             <Navbar collapseOnSelect className="rounded mt-2 shadow" expand="lg" bg="ligth" data-bs-theme="ligth">
                 <Container>
-                    <Navbar.Brand href="#home">
-                        <Nav.Link href="home">
-                            <span className="logo">Barista Atölyesi</span>
-                        </Nav.Link>
+                    <Navbar.Brand href="home">
+
+                        <span className="logo">Barista Atölyesi</span>
+
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
@@ -36,7 +37,14 @@ export default function NavigationBar() {
                             <Nav.Link href="/login">Giriş Yap</Nav.Link>
                             <Nav.Link href="#register">Kayıt Ol</Nav.Link>
                         </Nav>
+
+
+
                     </Navbar.Collapse>
+                    <Button className="ms-2" variant={"warning"}>
+                        Favoriler
+                        <Badge className="ms-1" bg="dark">{favoriteEspressoIds.length}</Badge>
+                    </Button>
                 </Container>
             </Navbar>
 

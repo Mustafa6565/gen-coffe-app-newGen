@@ -7,7 +7,6 @@ const CoffeData = [
         description:
             "Chemex, 1941 yılında kimyager Peter Schlumbohm tarafından icat edilmiştir. Kum saati şeklindeki tasarımı ve kalın kağıt filtreleri sayesinde diğer demleme yöntemlerine göre daha berrak ve tortusuz bir kahve elde edilir. Genellikle orta veya iri öğütülmüş kahve kullanılır ve demleme süresi yaklaşık 4-6 dakika sürer. Chemex ile demlenen kahveler, ince ve zarif aromaları ön plana çıkarır. Özellikle tek kökenli (single-origin) kahvelerin kompleks tatlarını deneyimlemek için idealdir.",
         url: "https://youtu.be/-1OP3NnjLRA",
-
         howToBrew: [
             "Kalın Chemex filtresini hazırlayın ve Chemex'in üst kısmına yerleştirin.",
             "Filtreyi sıcak su ile ıslatın ve suyu boşaltın (bu, kağıt tadını giderir ve Chemex'i ısıtır).",
@@ -16,6 +15,13 @@ const CoffeData = [
             "Kalan sıcak suyu yavaşça ve dairesel hareketlerle kahvenin üzerine dökün. Toplam demleme süresi 4-6 dakika olmalıdır.",
             "Demleme tamamlandığında filtreyi çıkarın ve kahvenizin tadını çıkarın.",
         ],
+        tasteProfile: {
+            summary: "Temiz, berrak ve zarif aromalı kahveler sevenler için idealdir. Özellikle tek kökenli (single-origin) kahvelerin nüanslarını keşfetmek isteyenlere önerilir.",
+            keywords: ["temiz", "berrak", "zarif", "aromatik", "tek kökenli"],
+            acidity: "Orta-Yüksek",
+            body: "Hafif",
+            flavorNotes: "Çiçeksi, narenciye, parlak",
+        },
     },
     {
         id: 2,
@@ -25,7 +31,6 @@ const CoffeData = [
         description:
             "Hario V60, konik şekli ve iç yüzeyindeki spiral oluklar sayesinde suyun kahveyle temas süresini ve akışını optimize eder. Farklı demleme tekniklerine olanak tanır ve demleyiciye demleme sürecinde yüksek kontrol imkanı sunar. Genellikle orta öğütülmüş kahve kullanılır ve demleme süresi kişisel tercihlere göre ayarlanabilir. V60 ile demlenen kahveler, geniş bir aroma yelpazesi sunabilir. Özellikle farklı kavrulma seviyelerindeki kahvelerin nüanslarını keşfetmek için uygundur.",
         url: "https://youtu.be/XUte2_sGHRQ",
-
         howToBrew: [
             "V60 demleyiciyi bir servis kabı veya fincanın üzerine yerleştirin.",
             "Kağıt filtreyi V60'a yerleştirin ve sıcak su ile ıslatıp suyu boşaltın.",
@@ -34,8 +39,14 @@ const CoffeData = [
             "Kalan sıcak suyu yavaşça ve farklı dökme teknikleriyle (dairesel, zikzak vb.) kahvenin üzerine dökün. Toplam demleme süresi 2-3 dakika arasında olabilir.",
             "Demleme tamamlandığında V60'ı kaldırın ve kahvenizin tadını çıkarın.",
         ],
+        tasteProfile: {
+            summary: "Dengeli, aromatik ve demleme sürecinde kontrolü sevenler için mükemmeldir. Farklı kahve notalarını keşfetmek isteyenlere hitap eder.",
+            keywords: ["dengeli", "aromatik", "çok yönlü", "kontrol edilebilir"],
+            acidity: "Orta",
+            body: "Orta",
+            flavorNotes: "Çeşitli, kahveye göre değişir",
+        },
     },
-    // Diğer kahve demleme yöntemleri için de benzer şekilde "description" ve "howToBrew" alanlarını ekleyin...
     {
         id: 3,
         img: "3.png",
@@ -44,7 +55,6 @@ const CoffeData = [
         description:
             "Aeropress, basınç uygulayarak kahve demleyen kompakt ve taşınabilir bir araçtır. Kısa demleme süresi (genellikle 1-3 dakika) sayesinde acı tatların oluşumu minimize edilir. Farklı öğütme seviyeleri ve demleme teknikleriyle çeşitli tat profilleri elde etmek mümkündür. Aeropress ile demlenen kahveler genellikle temiz, pürüzsüz ve yoğun bir tada sahiptir. Seyahatlerde veya hızlı bir demleme gerektiğinde idealdir.",
         url: "https://youtu.be/-1OP3NnjLRA",
-
         howToBrew: [
             "Aeropress'i ters çevirin (piston yukarıda, kapak aşağıda olacak şekilde).",
             "Orta veya ince öğütülmüş kahveyi (genellikle 1:15 veya 1:16 kahve/su oranı) Aeropress'e ekleyin.",
@@ -54,6 +64,13 @@ const CoffeData = [
             "Demlenmiş kahveyi fincanınıza aktarın ve tadını çıkarın.",
             "(Alternatif olarak, standart yöntemle de demleyebilirsiniz: filtre takılı kapak aşağıda, kahve ve su ekleyip pistonu itin.)",
         ],
+        tasteProfile: {
+            summary: "Yoğun, pürüzsüz ve hızlı demleme isteyenler için idealdir. Seyahat edenler ve farklı demleme stillerini denemeyi sevenler tercih edebilir.",
+            keywords: ["yoğun", "pürüzsüz", "hızlı", "taşınabilir", "çok yönlü"],
+            acidity: "Düşük-Orta",
+            body: "Orta-Yüksek",
+            flavorNotes: "Konsantre, temiz bitiş",
+        },
     },
     {
         id: 4,
@@ -63,7 +80,6 @@ const CoffeData = [
         description:
             "French Press (Filtre Kahve Presi), iri öğütülmüş kahvenin sıcak suyla belirli bir süre demlendikten sonra metal bir filtre yardımıyla posasından ayrılması prensibine dayanır. Bu yöntem, kahvenin yağlarının ve ince tortularının fincana geçmesine izin verdiği için daha dolgun ve yoğun bir tat profili sunar. Demleme süresi genellikle 4-5 dakika arasındadır. Özellikle gövdeli ve zengin kahve sevenler için idealdir.",
         url: "https://youtu.be/-1OP3NnjLRA",
-
         howToBrew: [
             "French Press'in içine iri öğütülmüş kahveyi (genellikle 1:15 veya 1:16 kahve/su oranı) ekleyin.",
             "Sıcak suyu (önerilen sıcaklıkta) kahvenin üzerine dökün ve hafifçe karıştırın.",
@@ -71,6 +87,13 @@ const CoffeData = [
             "Demleme süresi dolunca pistonu yavaşça ve sabit bir şekilde aşağı doğru itin.",
             "Kahveyi hemen servis edin (uzun süre French Press içinde bekletmek acılaşmaya neden olabilir).",
         ],
+        tasteProfile: {
+            summary: "Dolgun, gövdeli ve zengin kahve tadı sevenler için idealdir. Kahvenin doğal yağlarının fincana geçmesine izin verdiği için yoğun bir deneyim sunar.",
+            keywords: ["dolgun", "gövdeli", "zengin", "yoğun", "yağlı"],
+            acidity: "Düşük",
+            body: "Yüksek",
+            flavorNotes: "Topraksı, çikolata, karamel (kahveye göre değişir)",
+        },
     },
     {
         id: 5,
@@ -80,7 +103,6 @@ const CoffeData = [
         description:
             "Syphon (Vakumlu Kahve Demleyici), ısı ve vakum prensiplerini kullanarak kahve demleyen görsel olarak etkileyici bir araçtır. İki cam haznesi bulunur; alt hazne ısıtılır ve oluşan buhar basıncı suyu üst hazneye iter, burada kahveyle karışır ve ardından ısı kesildiğinde vakum etkisiyle alt hazneye geri döner. Syphon ile demlenen kahveler genellikle berrak, temiz ve karmaşık aromalara sahiptir. Özellikle nadir ve özel kahvelerin inceliklerini ortaya çıkarmak için tercih edilir.",
         url: "https://youtu.be/-1OP3NnjLRA",
-
         howToBrew: [
             "Alt hazneye sıcak suyu ekleyin.",
             "Üst hazneyi alt haznenin üzerine yerleştirin ve contanın sıkıca oturduğundan emin olun.",
@@ -90,6 +112,13 @@ const CoffeData = [
             "Ocağı kapatın ve alt haznenin soğumasını bekleyin. Vakum etkisiyle demlenmiş kahve alt hazneye geri dönecektir.",
             "Üst hazneyi çıkarın ve kahvenizi servis edin.",
         ],
+        tasteProfile: {
+            summary: "Görsel şölen eşliğinde berrak, temiz ve karmaşık aromalı kahveler arayanlar için özel bir deneyim sunar. Nadir kahvelerin inceliklerini ortaya çıkarmak isteyenlere önerilir.",
+            keywords: ["berrak", "temiz", "karmaşık", "görsel", "özel"],
+            acidity: "Orta-Yüksek",
+            body: "Hafif-Orta",
+            flavorNotes: "İnce, detaylı, aromatik",
+        },
     },
     {
         id: 6,
@@ -99,7 +128,6 @@ const CoffeData = [
         description:
             "Mokapot (İtalyan Kahve Makinesi), ocak üzerinde kullanılan ve buhar basıncıyla kahve demleyen pratik bir araçtır. Alt hazneye su konulur, orta hazneye öğütülmüş kahve eklenir ve ısıtıldığında oluşan buhar suyu yukarı doğru iterek kahvenin içinden geçer ve üst hazneye demlenmiş kahve olarak dolar. Mokapot kahvesi, espressoya yakın yoğunlukta ve güçlü bir tada sahiptir. Özellikle süt bazlı kahve içecekleri için güçlü bir temel oluşturur.",
         url: "https://youtu.be/-1OP3NnjLRA",
-
         howToBrew: [
             "Mokapot'ın alt haznesini emniyet valfinin altına kadar sıcak suyla doldurun.",
             "Orta filtre haznesini ince-orta öğütülmüş kahve ile doldurun (sıkıştırmayın).",
@@ -108,6 +136,13 @@ const CoffeData = [
             "Kaynamaya başladığında kahve üst hazneye dolmaya başlayacaktır. Garip sesler duyduğunuzda ocaktan alın.",
             "Kahveyi hemen fincanınıza dökün ve tadını çıkarın.",
         ],
+        tasteProfile: {
+            summary: "Yoğun, güçlü ve espressoya yakın bir kahve deneyimi arayanlar için idealdir. Sütlü içecekler için güçlü bir temel oluşturur.",
+            keywords: ["yoğun", "güçlü", "espresso benzeri", "pratik"],
+            acidity: "Düşük",
+            body: "Yüksek",
+            flavorNotes: "Kavrulmuş, yoğun, çikolata",
+        },
     },
     {
         id: 7,
@@ -116,8 +151,8 @@ const CoffeData = [
         make: "Türk kahvesi demlemek için kullanılan, geleneksel ve özel bir bakır veya pirinçten yapılmış küçük bir tenceredir. Genellikle dar bir ağzı ve uzun bir sapı bulunur. Türk kahvesi, kendine özgü demleme yöntemi ve sunumuyla dünya çapında tanınır ve cezve bu ritüelin vazgeçilmez bir parçasıdır.",
         description:
             "Cezve, ince öğütülmüş Türk kahvesinin su ile karıştırılıp kısık ateşte köpürene kadar pişirildiği geleneksel bir demleme aracıdır. Kahve telvesiyle birlikte servis edilir ve kendine has yoğun aroması ve köpüğüyle bilinir. Türk kahvesi, sadece bir içecek olmanın ötesinde, kültürel bir ritüel ve sosyal bir etkinliktir. Özellikle sohbetlerin ve keyifli anların vazgeçilmezidir.",
-        url: "https://youtu.be/-1OP3NnjLRA", videId: "",
-
+        url: "https://youtu.be/-1OP3NnjLRA",
+        videId: "",
         howToBrew: [
             "Cezveye soğuk suyu (genellikle bir fincan için yaklaşık 50-60 ml) ekleyin.",
             "İnce öğütülmüş Türk kahvesini (bir fincan için yaklaşık 1-2 tatlı kaşığı) suya ekleyin.",
@@ -127,6 +162,13 @@ const CoffeData = [
             "Köpüğü fincanlara paylaştırın ve cezveyi tekrar ocağa koyun. Kalan kahveyi de fincanlara yavaşça dökün.",
             "Birkaç dakika telvenin çökmesini bekleyin ve afiyetle için.",
         ],
+        tasteProfile: {
+            summary: "Yoğun, köpüklü ve telveli, geleneksel bir kahve deneyimi arayanlar için mükemmeldir. Sohbet ve ritüelin parçası olanlara hitap eder.",
+            keywords: ["yoğun", "köpüklü", "geleneksel", "ritüel", "telveli"],
+            acidity: "Düşük",
+            body: "Çok Yüksek",
+            flavorNotes: "Kavrulmuş, topraksı, baharatlı",
+        },
     },
     {
         id: 8,
@@ -136,7 +178,6 @@ const CoffeData = [
         description:
             "Cold Drip (Soğuk Damlama Kahve), sıcak demlemeye göre daha az asidik, daha yumuşak ve tatlı bir kahve elde edilmesini sağlar. Uzun demleme süreci, kahvedeki farklı aroma bileşenlerinin yavaşça çözünmesine olanak tanır. Elde edilen konsantre kahve, su veya süt ile seyreltilerek servis edilebilir ve genellikle buzlu olarak tüketilir. Özellikle yaz aylarında ferahlatıcı ve farklı bir kahve deneyimi sunar.",
         url: "https://youtu.be/-1OP3NnjLRA",
-
         howToBrew: [
             "Soğuk damlama ekipmanını hazırlayın.",
             "Alt hazneye buzlu su veya soğuk suyu ekleyin.",
@@ -146,6 +187,13 @@ const CoffeData = [
             "Demleme tamamlandığında konsantre kahveyi alt hazneden alın.",
             "Konsantre kahveyi isteğe göre su veya süt ile seyreltin ve buz ekleyerek servis yapın.",
         ],
+        tasteProfile: {
+            summary: "Az asidik, yumuşak, tatlı ve ferahlatıcı bir kahve arayanlar için idealdir. Özellikle yaz aylarında ve soğuk kahve tercih edenler için uygundur.",
+            keywords: ["az asidik", "yumuşak", "tatlı", "ferahlatıcı", "soğuk"],
+            acidity: "Düşük",
+            body: "Orta",
+            flavorNotes: "Çikolata, karamel, meyvemsi (kahveye göre)",
+        },
     },
 ];
 

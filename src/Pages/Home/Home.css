@@ -1,42 +1,32 @@
 .hero-section {
-   
-    
-    background-image: url('/public/Bacground.png'); /* public klasöründen ise */
-    /* veya */
-    /* background-image: url(./assets/background-image.jpg); */ /* src/assets içinden ise */
-    height:100vh ;
-    background-size: cover; /* Resmi tüm alanı kaplayacak şekilde boyutlandır */
-    background-position: center center; /* Resmi ortala */
-    background-repeat: no-repeat; /* Resmin tekrar etmesini engelle */
-    min-height: 500px; /* Arka planın görünmesi için yeterli yükseklik verin */
-    display: flex; /* İçeriği ortalamak için Flexbox kullanın */
-    align-items: center; /* Dikeyde ortala */
-    justify-content: center; /* Yatayda ortala */
-    color: black; /* Metin rengini ayarlayın */
-    text-align: center; /* Metni ortala */
-    
-  }
-  .blur{
- /* Bu div, gerçek buzlu cam efekti uygulanan katman olacak */
- background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
- /* Beyaza yakın şeffaf bir gradyan */
- border-radius: 15px; /* Köşeleri yuvarlayarak modern bir görünüm */
- padding: 40px;
- box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Hafif bir gölge */
- backdrop-filter: blur(10px); /* BURASI SİHİRLİ KISIM! */
- -webkit-backdrop-filter: blur(10px); /* Webkit tarayıcılar için */
- border: 1px solid rgba(255, 255, 255, 0.18); /* Hafif şeffaf kenarlık */
- color: #333; /* İçerik metni rengi */
- /* Overlay genişliği */
- text-align: center;
+      background-image: url('/public/Bacground.png'); 
+      height:100vh ;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: black;
+      text-align: center;
   }
   
-
-  .HeadLine{
-    
-        font-family: "Parisienne", cursive;
-        font-size: xxx-large;
-        font-weight: 800;
-        font-style: normal;
-      
+  .blur {
+      background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #333;
+      text-align: center;
+  }
+  
+  .HeadLine {
+      font-family: "Parisienne", cursive;
+      font-size: xxx-large;
+      font-weight: 800;
+      font-style: normal;
   }

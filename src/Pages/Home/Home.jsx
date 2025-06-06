@@ -4,7 +4,7 @@ export default function Home() {
     return (
         <>
             <div className="hero-section"> {/* Eğer CSS sınıfı kullanacaksanız */}
-                <Container resp className="shadow mt-3">
+                <Container className="shadow mt-3">
 
                     <Row className="blur">
 

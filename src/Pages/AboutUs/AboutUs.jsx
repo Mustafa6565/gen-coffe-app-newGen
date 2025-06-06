@@ -1,12 +1,83 @@
-import { Container } from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
+import { FaCoffee, FaHeart, FaHandsHelping, FaLeaf } from "react-icons/fa"; // İkonlar için react-icons kütüphanesini kurmanız gerekebilir: npm install react-icons
 
 export default function AboutUs() {
     return (
-        <Container className="mt-3 mb-3  shadow">
-            <div><h1>About Us Pages</h1>
+        <Container className="mt-5 mb-5 shadow p-4 rounded">
+            <h1 className="text-center mb-4 HeadLine">Barista Atölyesi Hakkında</h1>
+            <p className="text-center lead mb-5">
+                Kahveye olan tutkumuzla yola çıktık ve bu tutkuyu sizlerle paylaşmak için Barista Atölyesi'ni kurduk.
+                Amacımız, her yudumda mükemmelliği sunmak ve kahve dünyasının zenginliğini keşfetmenize yardımcı olmaktır.
+            </p>
 
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem possimus sapiente veritatis cupiditate at magni sed quae eaque eligendi illo voluptates et vel iste dignissimos libero minima consequuntur culpa, aut magnam in. Velit fugit laboriosam quod cumque sequi accusantium, autem officia repudiandae adipisci eum porro incidunt culpa fugiat a enim repellendus voluptates explicabo! Perferendis veniam optio a facere exercitationem distinctio quos expedita, at tempora tempore cupiditate? Pariatur odit asperiores porro fugit autem perspiciatis suscipit dignissimos ut saepe nemo voluptates iure, vitae labore distinctio minima obcaecati harum a quo eos. Sint sunt quisquam, labore atque voluptas illo ad aliquid repudiandae consectetur, dolore, excepturi maxime quaerat beatae repellendus incidunt. Dignissimos, mollitia. Eveniet incidunt voluptate ratione exercitationem doloremque reprehenderit culpa delectus est accusamus quidem laborum soluta nulla eius nemo animi nesciunt architecto saepe, ab commodi quos quis sapiente doloribus sed eligendi. Eaque, aut temporibus? Quam molestiae, dignissimos, voluptatibus officiis adipisci earum fuga ea suscipit porro, veniam minima quasi saepe magnam aliquam hic ipsum nobis distinctio maiores sint quaerat provident dolores accusamus praesentium numquam. Possimus quod asperiores labore rem sint. Sunt voluptatum magni iste aliquid aliquam, illum, eos voluptatibus sint fugit omnis aspernatur numquam totam commodi accusantium, placeat at exercitationem reiciendis ipsam pariatur voluptatem! Facere, deserunt ullam ipsa ea nobis corrupti, assumenda consequuntur autem aut veniam reprehenderit non accusantium amet illum, magnam et harum quam repudiandae. Dignissimos, quod ullam praesentium reprehenderit consequatur dolore minima cupiditate quaerat cumque impedit saepe molestias vel provident excepturi beatae aliquid culpa corrupti commodi soluta tenetur et distinctio qui voluptatum? In corrupti ipsum pariatur iste voluptatibus repellat rerum. Alias laborum architecto quis sequi aliquid quibusdam aspernatur, voluptatibus libero fugiat modi molestiae! Maxime eligendi molestias veritatis nulla nesciunt quo aspernatur ratione accusamus quas tempore alias deleniti libero ullam excepturi perferendis voluptates consequuntur eveniet esse ut, repellat ea. Tenetur, ducimus eos praesentium quaerat temporibus minima recusandae tempore molestiae delectus! Ea officiis sed qui, ducimus animi ipsum optio iste odio inventore dolorum, officia earum quisquam facilis magni sit nihil laboriosam fugiat reiciendis voluptatem quasi amet obcaecati? Aliquid, vitae consectetur necessitatibus quia blanditiis voluptatibus repudiandae nemo fugit quidem, dolore, aut obcaecati autem unde eius in laboriosam doloribus quas ipsa? Sed non voluptates alias ipsa ratione nemo odit enim consectetur amet! Numquam, sapiente eos nisi commodi quae magni quaerat vel saepe, alias eligendi modi molestiae facilis impedit accusantium voluptas animi quisquam enim molestias! Commodi nostrum exercitationem atque labore aliquid doloribus porro possimus ad id doloremque inventore nihil consectetur illum ipsa quasi magni, odio aut voluptas blanditiis suscipit, esse rerum ipsum. Veniam vitae ab quidem nihil nobis culpa. Neque mollitia sed, aliquam quis, consequuntur quos corporis inventore dicta ex, et placeat impedit blanditiis voluptas qui animi harum ullam eaque perferendis iste laborum ducimus modi expedita. Totam provident ex rerum aspernatur tempore commodi debitis aliquam vitae incidunt, ipsa voluptate odio a. Corrupti, neque fuga? Voluptas, atque mollitia. Veritatis obcaecati soluta voluptatem quasi ab, alias tempore ut praesentium ipsum impedit dolorum accusantium rerum, atque ipsa, nihil qui quis unde quas consequatur adipisci provident in voluptas. Mollitia corrupti ratione magnam ipsum, eos aliquam modi porro tempora praesentium sed dolorem error quas non minus voluptatem obcaecati molestiae, debitis repudiandae? Ab suscipit harum quo quasi voluptas? Tempora minima inventore odit ullam sint mollitia consectetur repellat quaerat, quisquam aliquid nesciunt vero doloribus accusamus fugit sit facilis unde ratione omnis sed, harum expedita necessitatibus voluptates aut! Quod sed inventore iure. Enim, nihil. Perspiciatis sequi perferendis eaque a quos maxime eveniet inventore dolores, est quas? Aliquam laboriosam nisi cumque quam. At facere vitae iusto cumque eum consequatur tenetur eius nam illum harum recusandae nobis laboriosam voluptatem fugit ducimus distinctio dolorem quibusdam mollitia accusamus ipsum quis, magnam, corporis consectetur! Quas, modi molestias ex totam quibusdam beatae deleniti inventore assumenda neque qui tempore laboriosam itaque necessitatibus, quis laudantium quasi vel minima illum earum? Neque, fugit at? Ut quis maxime doloremque? Unde rem consequatur veritatis ratione velit quibusdam mollitia magnam dicta impedit. Dolorem dicta recusandae reiciendis autem temporibus quidem omnis fugit eaque amet. Iusto dicta consequatur error! Minima perferendis eos esse tempore facilis harum voluptatibus, doloribus earum voluptate deleniti? Explicabo nisi reprehenderit alias recusandae soluta aut illo in exercitationem maxime tempore. Similique suscipit repellat fugiat recusandae corporis ex fugit qui expedita non tempora cum corrupti officia exercitationem, id ipsa optio unde magnam nobis ducimus rerum libero magni neque? Molestias qui quo id possimus, delectus explicabo. Dolorem repellat repellendus vero, omnis, facere dolor iusto tempore necessitatibus vitae facilis adipisci animi voluptatem praesentium temporibus ratione non dolorum reprehenderit eveniet voluptatibus nemo! Perspiciatis enim debitis provident, quidem autem dolores, architecto porro excepturi asperiores, quo a quis at odit blanditiis. Neque nostrum sequi sint, officia numquam repellat aliquid vel aspernatur unde rem soluta? Optio nemo odio magnam obcaecati pariatur rerum repudiandae consequuntur illo iusto dolorem eveniet recusandae quidem cupiditate repellat quaerat natus enim, atque voluptate consequatur! Sapiente odit, dignissimos quis atque corporis officiis commodi nesciunt? Cumque cupiditate fugit asperiores voluptas. Recusandae, pariatur facilis architecto atque adipisci consectetur libero distinctio fuga ut nihil corrupti numquam dolores ea laborum omnis, sapiente dolorum eum harum qui vero cupiditate incidunt. In odit quos tenetur dolorum doloribus itaque, voluptatibus blanditiis animi, rerum quae vitae nisi porro error modi labore necessitatibus aspernatur sequi ex maxime? Maxime, iste fugit. Ab, libero quam velit obcaecati veritatis quis aspernatur consequatur quidem rerum similique accusamus nihil exercitationem porro odio eum error. Velit distinctio tenetur ex amet molestias ipsum, illo officiis alias fugiat cupiditate id quis. Quaerat neque libero, porro cumque explicabo atque, modi doloremque sint voluptatum impedit eius, minus nesciunt fugit nam eligendi distinctio! Id quae quisquam ratione molestiae assumenda cumque alias, corrupti modi animi perspiciatis dolorem voluptatum ipsa aspernatur. Maiores sint accusantium cum impedit neque repellendus natus, dignissimos earum alias quam aliquam eos deleniti? Voluptatem ab natus dignissimos quis totam est delectus fugiat, odit sint commodi placeat voluptatum exercitationem illo explicabo sequi sunt at iste! Placeat ratione commodi earum officia ipsa odio. Eius optio suscipit quibusdam nesciunt esse sequi odit repudiandae amet vitae, nobis officia cum, ut accusantium quas, maxime autem nemo consequuntur. Culpa temporibus numquam expedita quae, voluptates aperiam.</p>
-            </div>
+            <Row className="mb-5">
+                <Col md={6} className="mb-4">
+                    <Card className="h-100 p-3">
+                        <Card.Body>
+                            <h3 className="text-center mb-3">Biz Kimiz?</h3>
+                            <p>
+                                Barista Atölyesi olarak, kahvenin sadece bir içecekten çok daha fazlası olduğuna inanıyoruz.
+                                O, bir sanat, bir kültür ve her damak zevkine hitap edebilecek sonsuz bir keşif alanı.
+                                En kaliteli çekirdekleri özenle seçiyor, her bir demleme yönteminin inceliklerini araştırıyor ve
+                                bu bilgiyi, her seviyeden kahve severle paylaşmaktan gurur duyuyoruz.
+                            </p>
+                            <p>
+                                İster yeni başlayan bir kahve meraklısı olun, ister deneyimli bir barista, sitemizde
+                                kendinize uygun demleme yöntemlerini, kahve çeşitlerini ve tat profillerini bulabileceksiniz.
+                                Misyonumuz, kahve bilginizi zenginleştirmek ve evinizde bile profesyonel kalitede kahveler demlemenizi sağlamaktır.
+                            </p>
+                        </Card.Body>
+                    </Card>
+                </Col>
+                <Col md={6} className="mb-4">
+                    <Card className="h-100 p-3">
+                        <Card.Body>
+                            <h3 className="text-center mb-3">Misyonumuz ve Değerlerimiz</h3>
+                            <ul className="list-unstyled">
+                                <li className="d-flex align-items-start mb-3">
+                                    <FaHeart size={24} className="me-3 text-danger flex-shrink-0" />
+                                    <div>
+                                        <strong>Tutku ve Kalite:</strong> Kahveye olan derin tutkumuzla hareket ediyor, en taze ve kaliteli çekirdekleri sizlere sunmayı hedefliyoruz.
+                                    </div>
+                                </li>
+                                <li className="d-flex align-items-start mb-3">
+                                    <FaHandsHelping size={24} className="me-3 text-primary flex-shrink-0" />
+                                    <div>
+                                        <strong>Bilgi Paylaşımı:</strong> Kahve demleme sanatının inceliklerini, anlaşılır ve erişilebilir bir dille herkesle paylaşmayı önemsiyoruz.
+                                    </div>
+                                </li>
+                                <li className="d-flex align-items-start mb-3">
+                                    <FaLeaf size={24} className="me-3 text-success flex-shrink-0" />
+                                    <div>
+                                        <strong>Sürdürülebilirlik:</strong> Kahve çekirdeklerimizin kaynağını önemsiyor, etik ve sürdürülebilir üretim yapan çiftçileri desteklemeyi amaçlıyoruz.
+                                    </div>
+                                </li>
+                                <li className="d-flex align-items-start mb-3">
+                                    <FaCoffee size={24} className="me-3 text-warning flex-shrink-0" />
+                                    <div>
+                                        <strong>Keşif ve Deneyim:</strong> Her fincanın arkasındaki hikayeyi ve farklı tat profillerini keşfetmeniz için size rehberlik ediyoruz.
+                                    </div>
+                                </li>
+                            </ul>
+                        </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
+
+            <Row className="text-center mt-5">
+                <Col>
+                    <h2 className="mb-4 HeadLine">Bize Katılın!</h2>
+                    <p className="lead">
+                        Kahve yolculuğunuzda size eşlik etmekten mutluluk duyarız.
+                        Sitemizdeki demleme rehberlerini inceleyin, en sevdiğiniz kahve türünü keşfedin
+                        ve mükemmel fincanınızı demlemeye başlayın.
+                    </p>
+                    <p>
+                        Sorularınız mı var? Önerileriniz mi var? Bize her zaman ulaşmaktan çekinmeyin!
+                    </p>
+                    <a href="/contact" className="btn btn-dark btn-lg mt-3">İletişime Geçin</a>
+                </Col>
+            </Row>
         </Container>
     );
 }
