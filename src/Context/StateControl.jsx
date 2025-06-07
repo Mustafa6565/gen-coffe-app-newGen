@@ -5,7 +5,6 @@ import { createContext, useCallback, useState, useEffect } from "react"; // useE
 export const StateControll = createContext();
 
 export function StateCotrolProvider({ children }) {
-    // localStorage'dan başlangıç değeri okuyun, yoksa boş dizi kullanın
     const [favoriteEspressoIds, setFavoriteEspressoIds] = useState(() => {
         const storedFavorites = localStorage.getItem('favoriteEspressoIds');
         return storedFavorites ? JSON.parse(storedFavorites) : [];
@@ -21,10 +20,13 @@ export function StateCotrolProvider({ children }) {
         });
     }, []);
 
-    // favoriteEspressoIds değiştiğinde localStorage'a kaydedin
     useEffect(() => {
         localStorage.setItem('favoriteEspressoIds', JSON.stringify(favoriteEspressoIds));
-    }, [favoriteEspressoIds]); // favoriteEspressoIds değiştiğinde çalışır
+    }, [favoriteEspressoIds]);
+
+
+
+
 
     return (
         <StateControll.Provider value={{ setFavoriteEspressoIds, handleToggleFavorite, favoriteEspressoIds }} >

@@ -5,6 +5,8 @@ import Coffes from "../Pages/Coffes/Coffes";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import Login from "../Pages/Login/Login";
 import Espressos from "../Pages/Espressos/Espressos";
+import ContactUs from "../Pages/ContactUs/ContactUs";
+import CoffeMethodDetail from "../components/CoffeMethodDetail";
 
 export const Router = createBrowserRouter([
     { index: true, element: <MainLayout /> },
@@ -12,10 +14,16 @@ export const Router = createBrowserRouter([
         path: "/", element: <MainLayout />, children: [
             { index: true, element: <Home /> },
             { path: "home", element: <Home /> },
-            { path: "coffes", element: <Coffes /> },
+            {
+                path: "coffes", element: <Coffes />, children: [
+                    { path: ":id", element: <CoffeMethodDetail /> },
+                ]
+            },
+
             { path: "espressos", element: <Espressos /> },
             { path: "aboutus", element: <AboutUs /> },
             { path: "login", element: <Login /> },
+            { path: "contactus", element: <ContactUs /> },
 
         ]
     }

@@ -4,14 +4,15 @@ export default function Home() {
     return (
         <>
             <div className="hero-section"> {/* Eğer CSS sınıfı kullanacaksanız */}
-                <Container className="shadow mt-3">
+                <Container className="shadow  mt-3">
 
-                    <Row className="blur">
+                    <Row className="blur p-5">
 
-                        <h2>Merhabalar</h2>
-                        <h4>Özenle Seçilmiş Kahve Çekirdekleri.</h4>
-                        <h5>Mükemmel Demleme Teknikleri.</h5>
-                        <h5>Ve Kahveye Dair Herşey...</h5>
+
+                        <h1>Özenle Seçilmiş Kahve Çekirdekleri.</h1>
+                        <h2>Mükemmel Demleme Teknikleri.</h2>
+                        <h4>Ve </h4>
+                        <h4>Kahveye Dair Herşey...</h4>
                         <span className="HeadLine">Barista Atölyesi</span>
 
 

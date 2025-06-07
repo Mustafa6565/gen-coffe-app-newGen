@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import apiService from '../api/apiService'; // apiService'i import edin
 import { Card, Button, Container, Row, Col, Spinner } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function CoffeeMethodsList() {
     const [coffees, setCoffees] = useState([]);
@@ -40,14 +41,15 @@ function CoffeeMethodsList() {
             <Row className="justify-content-around" >
                 {coffees.map((coffee) => (
                     <Col key={coffee.id} xs={4} md={3} lg={1} style={{ justifyContent: "center" }} className="mb-4">
-                        <Card style={{ width: "110px", objectFit: "contain" }}>
-                            <Card.Img variant="top" sizes='xs' style={{ height: "150px" }} src={`/${coffee.img}`} alt={coffee.name} /> {/* Public klasöründeki resimler için */}
-                            <Card.Body>
-                                <Card.Title style={{ fontSize: "15px" }}>{coffee.name}</Card.Title>
-                                {shoe && <Card.Text>{coffee.make}</Card.Text>}
-                                {/* Detay sayfasına gitmek için */}
-                                <Button style={{ fontSize: "small" }} onClick={((id) => setShoe(!shoe))} variant="primary">Ayrıntılar</Button>
-                            </Card.Body>
+                        <Card style={{ width: "120px", objectFit: "contain" }} className=' text-center d-flex'>
+                            <Card.Header className='' style={{ fontSize: "13px" }}>
+                                {coffee.name}
+
+                            </Card.Header>
+                            <Card.Img variant="top" sizes='xs' style={{ height: "150px" }} src={`/${coffee.img}`} alt={coffee.name} />
+
+                            <Link to={`${coffee.id}`} className='btn btn-sm btn-warning '>Ayrıntılar </Link>
+
                         </Card>
                     </Col>
                 ))}

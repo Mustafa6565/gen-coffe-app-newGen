@@ -1,17 +1,15 @@
 import { useContext, useState } from "react";
 import RouterLink from "./RouterLink";
-import { Badge, Button, Container, Image, Nav, Navbar } from "react-bootstrap";
+import { Badge, Button, Container, Image, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { StateControll } from "../Context/StateControl";
 
 export default function NavigationBar() {
     const [showMenu, setShowMenu] = useState(false);
     const { favoriteEspressoIds } = useContext(StateControll)
     const navigate = [
-        { id: 1, title: "Home", to: "home" },
-        { id: 2, title: "About Us", to: "aboutus" },
-        { id: 3, title: "Coffe's", to: "coffes" },
-        { id: 4, title: "Espresso's", to: "espressos" },
-        { id: 5, title: "Error", to: "" },
+        { id: 1, title: "Home", to: "/home" },
+        { id: 2, title: "About Us", to: "/aboutus" },
+        { id: 5, title: "İletişim", to: "/contactus" },
 
     ]
 
@@ -29,9 +27,18 @@ export default function NavigationBar() {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
+                            <NavDropdown title="Coffe's">
+                                <NavDropdown.Item href="/coffes">
+                                    Demleme YÖntemleri
+                                </NavDropdown.Item>
+                                <NavDropdown.Item href="/espressos">
+                                    Espresso Çekirdeği
+                                </NavDropdown.Item>
+                            </NavDropdown>
                             {navigate.map((link) => (
                                 <RouterLink key={link.id} link={link} />
                             ))}
+
                         </Nav>
                         <Nav>
                             <Nav.Link href="/login">Giriş Yap</Nav.Link>

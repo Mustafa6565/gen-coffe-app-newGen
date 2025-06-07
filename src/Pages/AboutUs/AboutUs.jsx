@@ -75,7 +75,7 @@ export default function AboutUs() {
                     <p>
                         Sorularınız mı var? Önerileriniz mi var? Bize her zaman ulaşmaktan çekinmeyin!
                     </p>
-                    <a href="/contact" className="btn btn-dark btn-lg mt-3">İletişime Geçin</a>
+                    <a href="contactus" className="btn btn-dark btn-lg mt-3">İletişime Geçin</a>
                 </Col>
             </Row>
         </Container>
