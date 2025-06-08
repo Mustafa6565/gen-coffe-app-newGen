@@ -2,36 +2,31 @@ import React, { useEffect, useState } from 'react';
 import apiService from '../api/apiService'; // apiService'i import edin
 import { Card, Button, Container, Row, Col, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCoffes } from '../Features/Coffes/coffeeSlice';
 
 function CoffeeMethodsList() {
-    const [coffees, setCoffees] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-    const [shoe, setShoe] = useState(false)
+    const dispatch = useDispatch();
+    const coffees = useSelector((state) => state.coffees.items);
+    const loading = useSelector((state) => state.coffees.loading);
+    const error = useSelector((state) => state.coffees.error);
+
     useEffect(() => {
-        const fetchCoffees = async () => {
-            try {
-                setLoading(true);
-                const data = await apiService.getAllCoffees(); // API çağrısı
-                setCoffees(data);
-            } catch (err) {
-                setError("Kahve demleme yöntemleri yüklenirken bir hata oluştu.");
-                console.error("API Hatası:", err);
-            } finally {
-                setLoading(false);
-            }
-        };
+        if (loading === 'idle') {
+            dispatch(fetchCoffes());
 
-        fetchCoffees();
-    }, []);
+        }
+    }, [loading, dispatch])
 
-    if (loading) {
+
+
+    if (loading === 'pending') {
         return <Container className="text-center my-5">
             <Spinner animation='border' variant='success' />
         </Container>;
     }
 
-    if (error) {
+    if (loading === 'failed') {
         return <Container className="text-center p-5 my-5 text-danger">{error}</Container>;
     }
 

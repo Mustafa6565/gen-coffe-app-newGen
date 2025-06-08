@@ -11,22 +11,26 @@ export default function NavigationBar() {
         { id: 2, title: "About Us", to: "/aboutus" },
         { id: 5, title: "İletişim", to: "/contactus" },
 
-    ]
 
+    ]
+    function handleShowModal() {
+        setShowMenu(!showMenu)
+    }
 
     return (
         <div className="container-fluid">
 
             <Navbar collapseOnSelect className="rounded mt-2 shadow" expand="lg" bg="ligth" data-bs-theme="ligth">
                 <Container>
-                    <Navbar.Brand href="home">
+                    <Navbar.Brand href="/home">
 
                         <span className="logo">Barista Atölyesi</span>
 
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto">
+
+                        <Nav>
                             <NavDropdown title="Coffe's">
                                 <NavDropdown.Item href="/coffes">
                                     Demleme YÖntemleri
@@ -35,6 +39,9 @@ export default function NavigationBar() {
                                     Espresso Çekirdeği
                                 </NavDropdown.Item>
                             </NavDropdown>
+                        </Nav>
+                        <Nav className="me-auto">
+
                             {navigate.map((link) => (
                                 <RouterLink key={link.id} link={link} />
                             ))}
@@ -48,10 +55,12 @@ export default function NavigationBar() {
 
 
                     </Navbar.Collapse>
-                    <Button className="ms-2" variant={"warning"}>
+                    <Button className="ms-2" href="/favoriler" variant={"warning"}>
                         Favoriler
                         <Badge className="ms-1" bg="dark">{favoriteEspressoIds.length}</Badge>
+
                     </Button>
+
                 </Container>
             </Navbar>
 

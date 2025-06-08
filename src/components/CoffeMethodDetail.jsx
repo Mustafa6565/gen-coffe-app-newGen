@@ -1,9 +1,9 @@
-import { Card, Col, Container, Row, Spinner } from "react-bootstrap";
+import { Card, Col, Container, Row, Spinner, Table } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import apiService from "../api/apiService";
 import { Link, useParams } from "react-router-dom";
 
-export default function CoffeMethodDetail() {
+function CoffeMethodDetail() {
     const [coffeeDetail, setCoffeeDetail] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -57,6 +57,7 @@ export default function CoffeMethodDetail() {
 
 
                     </Row>
+
                     <Row className="p-3">
                         <Col>
                             <Card.Title>
@@ -65,6 +66,22 @@ export default function CoffeMethodDetail() {
                             <Card.Body className="text-start">
                                 <p>{coffeeDetail.description}</p>
                             </Card.Body>
+                        </Col>
+                    </Row>
+                    <Row className="p-3">
+                        <Col>
+                            <Card.Title>Özetle </Card.Title>
+                            <p>{coffeeDetail.tasteProfile.summary}</p>
+                            <Card.Title className="mt-2"> Kıvam</Card.Title>
+                            <ul>
+                                {coffeeDetail.tasteProfile.keywords.map((taste, index) => (
+                                    <li key={index}>{taste} </li>
+                                ))}
+                            </ul>
+                            <Card.Title className="mt-2"> Asidite </Card.Title>
+                            <p>{coffeeDetail.tasteProfile.acidity}</p>
+                            <Card.Title className="mt-2"> Tadım Notları </Card.Title>
+                            <p> {coffeeDetail.tasteProfile.flavorNotes}</p>
                         </Col>
                     </Row>
                     <Row className="p-3">
@@ -85,3 +102,4 @@ export default function CoffeMethodDetail() {
         </Container>
     );
 }
+export default CoffeMethodDetail;

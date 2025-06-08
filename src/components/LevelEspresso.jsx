@@ -12,7 +12,7 @@ const textStyle = {
     margin: "0",
     fontSize: "1rem",
 };
-export default function LevelEspresso({ rating, maxRating = 10,
+function LevelEspresso({ rating, maxRating = 10,
     color = "#fcc419",
     size = 15,
     onRating, }) {
@@ -65,3 +65,4 @@ function Bean({ fill, color, size, onRating }) {
     );
 
 }
+export default LevelEspresso;
