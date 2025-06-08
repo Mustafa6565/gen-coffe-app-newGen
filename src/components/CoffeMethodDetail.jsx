@@ -46,18 +46,18 @@ export default function CoffeMethodDetail() {
     return (
         <Container className="mt-3 mb-3 shadow p-3">
             {coffeeDetail ? (
-                <Card className="p-5 gap-5">
-                    <Card.Title className="text-center HeadLine">
+                <Card className="     gap-5">
+                    <Card.Header className="text-center HeadLine">
                         <h2>{coffeeDetail.name}</h2>
-                    </Card.Title>
-                    <Row className="text-center">
+                    </Card.Header>
+                    <Row className="text-center  ">
                         <Col>
                             <Card.Img variant="top" sizes='sm' style={{ width: "180px", margin: 5 }} src={`/${coffeeDetail.img}`} alt={coffeeDetail.name} />
                         </Col>
 
 
                     </Row>
-                    <Row>
+                    <Row className="p-3">
                         <Col>
                             <Card.Title>
                                 Hakkında
@@ -67,17 +67,17 @@ export default function CoffeMethodDetail() {
                             </Card.Body>
                         </Col>
                     </Row>
-                    <Row>
+                    <Row className="p-3">
                         <Col>
                             <Card.Title>Nasıl Demlenir</Card.Title>
                             {coffeeDetail?.howToBrew?.map((brew, index) => (
                                 <li key={index}>{brew} </li>
                             ))}
-
+                            <Link to={coffeeDetail.url} className="btn mt-3 btn-warning">İzle  </Link>
 
                         </Col>
                     </Row>
-                    <Link to={coffeeDetail.url} className="btn btn-warning">İzle  </Link>
+
                 </Card>
             ) : (
                 <p>Detay bulunamadı.</p>

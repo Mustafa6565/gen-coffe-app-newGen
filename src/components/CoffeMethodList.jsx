@@ -41,7 +41,7 @@ function CoffeeMethodsList() {
             <Row className="justify-content-around" >
                 {coffees.map((coffee) => (
                     <Col key={coffee.id} xs={4} md={3} lg={1} style={{ justifyContent: "center" }} className="mb-4">
-                        <Card style={{ width: "120px", objectFit: "contain" }} className=' text-center d-flex'>
+                        <Card style={{ width: "110px", objectFit: "contain" }} className=' text-center d-flex'>
                             <Card.Header className='' style={{ fontSize: "13px" }}>
                                 {coffee.name}
 
