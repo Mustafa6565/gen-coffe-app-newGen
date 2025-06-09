@@ -1,5 +1,5 @@
 import { createContext, useCallback, useState, useEffect } from "react";
-import apiService from "../api/apiService"; // apiService'in doğru yolu olduğundan emin olun
+import apiService from "../api/apiService";
 
 export const StateControll = createContext();
 
@@ -8,17 +8,15 @@ export function StateCotrolProvider({ children }) {
     const [theme, setTheme] = useState(() => {
         try {
             const storedTheme = localStorage.getItem('theme');
-            // localStorage'dan alınan değer bir string olduğu için JSON.parse ile boolean'a çeviriyoruz
-            // Eğer yoksa veya hata oluşursa varsayılan olarak false (açık tema) kullanıyoruz
             return storedTheme ? JSON.parse(storedTheme) : false;
         } catch (err) {
             console.error("Tema localStorage'dan yüklenirken hata:", err);
-            return false; // Hata durumunda varsayılan tema
+            return false;
         }
     });
 
     const handleSetTheme = () => {
-        setTheme((prevTheme) => !prevTheme); // Önceki değeri kullanarak temayı değiştir
+        setTheme((prevTheme) => !prevTheme);
     };
 
     const [favoriteEspressoIds, setFavoriteEspressoIds] = useState(() => {
@@ -26,7 +24,7 @@ export function StateCotrolProvider({ children }) {
             const storedFavorites = localStorage.getItem('favoriteEspressoIds');
             return storedFavorites ? JSON.parse(storedFavorites) : [];
         } catch (err) {
-            console.error("Favori ID'ler localStorage'dan yüklenirken hata:", err); // console.log yerine console.error kullanın
+            console.error("Favori ID'ler localStorage'dan yüklenirken hata:", err);
             return [];
         }
     });
@@ -59,9 +57,6 @@ export function StateCotrolProvider({ children }) {
             const fetchedBeans = [];
             let hasError = false;
 
-            // Tüm favori çekirdekleri paralel olarak çekmek daha verimli olabilir
-            // Ancak mevcut for döngüsü de çalışır.
-            // Hata yönetimi için ayrı ayrı yakalama önemlidir.
             for (const id of favoriteEspressoIds) {
                 try {
                     const bean = await apiService.getEspressoBeanById(id);
@@ -76,17 +71,16 @@ export function StateCotrolProvider({ children }) {
             }
             setFavoriteEspressoBeans(fetchedBeans);
             setLoadingFavoriteBeans(false);
-            if (hasError) { // Eğer bir hata oluştuysa ve henüz bir hata mesajı ayarlanmadıysa
+            if (hasError) {
                 setErrorFavoriteBeans('Favori çekirdekler yüklenirken bir hata oluştu.');
             }
         };
         fetchFavoriteBeans();
     }, [favoriteEspressoIds]);
 
-    // favoriteEspressoIds ve theme değiştiğinde localStorage'a kaydet
     useEffect(() => {
         localStorage.setItem('favoriteEspressoIds', JSON.stringify(favoriteEspressoIds));
-        localStorage.setItem('theme', JSON.stringify(theme)); // theme'i ayrı olarak kaydet
+        localStorage.setItem('theme', JSON.stringify(theme));
     }, [favoriteEspressoIds, theme]);
 
     return (

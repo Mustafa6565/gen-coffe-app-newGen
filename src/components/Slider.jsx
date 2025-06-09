@@ -12,7 +12,7 @@ function Slider() {
         const fetchCoffees = async () => {
             try {
                 setLoading(true);
-                const data = await apiService.getAdditionalData(); // API çağrısı
+                const data = await apiService.getAdditionalData();
                 setCoffees(data);
             } catch (err) {
                 setError("Kahve demleme yöntemleri yüklenirken bir hata oluştu.");
@@ -25,7 +25,7 @@ function Slider() {
         fetchCoffees();
     }, []);
     console.log(coffees)
-    // Display loading or error messages
+
     if (loading) {
         return (
             <Container className='mt-3 mb-3 p-3 shadow'>
@@ -45,14 +45,14 @@ function Slider() {
     return (
         <Container data-bs-theme={"dark"} className='mt-3 mb-3 p-3 shadow' style={{ border: "2px solid #FED8B1" }}>
             <Carousel interval={4000} variant='success' >
-                {coffees?.tips?.map((data) => ( // Changed to implicit return with parentheses
+                {coffees?.tips?.map((data) => (
                     <Carousel.Item className='text-center p-5' key={data.id}>
                         <Row >
                             <h3>{data.title} </h3>
                             <p>{data.content} </p>
                         </Row>
                         <Carousel.Caption>
-                            {/* You can add content to Carousel.Caption if needed */}
+
                         </Carousel.Caption>
                     </Carousel.Item>
                 ))}

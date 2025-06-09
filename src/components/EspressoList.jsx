@@ -4,32 +4,29 @@ import apiService from "../api/apiService";
 import LevelEspresso from "./LevelEspresso";
 import { StateControll } from "../Context/StateControl";
 import FavoriChoise from "./FavariChoise";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchEspressos } from "../Features/Coffes/coffeeSlice";
 
 export default function EspressoList() {
 
     const { favoriteEspressoIds, theme } = useContext(StateControll);
 
-    const [espresso, setEspresso] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+
+    const dispatch = useDispatch();
+
+
+    const espressos = useSelector((state) => state.espressos.items)
+    const loading = useSelector((state) => state.espressos.loading)
+    const error = useSelector((state) => state.espressos.error)
 
     useEffect(() => {
-        const fetchEspresso = async () => {
-            try {
-                setLoading(true);
-                const data = await apiService.getAllEspressoBeans();
-                setEspresso(data);
-            } catch (err) {
-                setError("Sayfa Yüklenirken Hata Oluştu");
-                console.error("API hatası: ", err);
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchEspresso();
-    }, []);
+        if (loading === 'idle') {
+            dispatch(fetchEspressos())
+        }
+    }, [dispatch, loading])
 
-    if (loading) {
+
+    if (loading === 'idle') {
         return (
             <Container className="mt-3 p-5 text-center shadow">
                 <Spinner animation="border" variant="success" />
@@ -37,7 +34,7 @@ export default function EspressoList() {
         );
     }
 
-    if (error) {
+    if (loading === 'failed') {
         return (
             <Container className="mt-3 text-center text-danger shadow">
                 {error}
@@ -50,7 +47,7 @@ export default function EspressoList() {
             <h3>Espreeso Çekirdekleri</h3>
 
             <Row className="justify-content-around text-start">
-                {espresso.map((bean) => {
+                {espressos.map((bean) => {
 
                     const isFavorite = favoriteEspressoIds.includes(bean.id);
 
