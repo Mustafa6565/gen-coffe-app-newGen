@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import apiService from '../api/apiService'; // apiService'i import edin
 import { Card, Button, Container, Row, Col, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCoffes } from '../Features/Coffes/coffeeSlice';
+import { StateControll } from '../Context/StateControl';
 
 function CoffeeMethodsList() {
     const dispatch = useDispatch();
     const coffees = useSelector((state) => state.coffees.items);
     const loading = useSelector((state) => state.coffees.loading);
     const error = useSelector((state) => state.coffees.error);
-
+    const { theme } = useContext(StateControll)
     useEffect(() => {
         if (loading === 'idle') {
             dispatch(fetchCoffes());
@@ -21,17 +22,17 @@ function CoffeeMethodsList() {
 
 
     if (loading === 'pending') {
-        return <Container className="text-center my-5">
+        return <Container lassName={` mt-3 mb-3  p-5 my-5 text-center  shadow ${theme ? 'bg-dark' : 'bg-ligth'}`} data-bs-theme={theme ? "dark" : "ligth"}>
             <Spinner animation='border' variant='success' />
         </Container>;
     }
 
     if (loading === 'failed') {
-        return <Container className="text-center p-5 my-5 text-danger">{error}</Container>;
+        return <Container className={` mt-3 mb-3  p-5 my-5 text-center text-danger shadow ${theme ? 'bg-dark' : 'bg-ligth'}`} data-bs-theme={theme ? "dark" : "ligth"}>{error}</Container>;
     }
 
     return (
-        <><Container className="mt-3 mb-3  shadow " style={{ border: "2px solid #FED8B1" }}>
+        <><Container className={` mt-3 mb-3 p-3 shadow ${theme ? 'bg-dark text-white' : 'bg-ligth'}`} data-bs-theme={theme ? "dark" : "ligth"} style={{ border: "2px solid #FED8B1" }}>
             <h2 className="text-center mb-4">Kahve Demleme Yöntemleri</h2>
             <Row className="justify-content-around" >
                 {coffees.map((coffee) => (

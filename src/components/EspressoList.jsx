@@ -7,7 +7,7 @@ import FavoriChoise from "./FavariChoise";
 
 export default function EspressoList() {
 
-    const { favoriteEspressoIds } = useContext(StateControll);
+    const { favoriteEspressoIds, theme } = useContext(StateControll);
 
     const [espresso, setEspresso] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -46,8 +46,9 @@ export default function EspressoList() {
     }
 
     return (
-        <Container className="mt-3 mb-3 shadow text-center" style={{ border: "2px solid #FED8B1" }}>
-            <h2 className="mb-2">Espresso Çeşitleri</h2>
+        <Container className={` mt-3 mb-3 p-3 shadow ${theme ? 'bg-dark text-white' : 'bg-ligth'}`} data-bs-theme={theme ? "dark" : "ligth"} style={{ border: "2px solid #FED8B1" }}>
+            <h3>Espreeso Çekirdekleri</h3>
+
             <Row className="justify-content-around text-start">
                 {espresso.map((bean) => {
 
@@ -56,6 +57,7 @@ export default function EspressoList() {
                     return (
                         <Col key={bean.id} xs={12} md={6} lg={6} className="mb-4">
                             <Card>
+
                                 <Card.Body>
                                     <Card.Title>{bean.name}</Card.Title>
                                     <Card.Text>{bean.history}</Card.Text>

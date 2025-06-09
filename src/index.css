@@ -15,7 +15,6 @@
   font-weight: 400;
   font-style: normal;
 }
-
-Container{
-  border: 1px solid #FED8B1;
+*{
+  transition: color,background-color 1s ease-in-out;
 }

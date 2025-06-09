@@ -2,11 +2,14 @@ import { Container, FormGroup, Form, FormLabel, Button, Row, Col, Card } from "r
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { useContext } from "react";
+import { StateControll } from "../../Context/StateControl";
 
 
 export default function Login() {
+    const { theme } = useContext(StateControll)
     return (
-        <Container className="mt-3 shadow p-3 mb-3">
+        <Container className={` mt-3 mb-3 p-3 shadow ${theme ? 'bg-dark text-white' : 'bg-ligth'}`} data-bs-theme={theme ? "dark" : "ligth"} >
             <Row className="text-center justify-content-center"> {/* Ortalamak için justify-content-center eklendi */}
                 <Col lg={6} md={8} sm={10} xs={12} className="mb-4"> {/* Küçük ekranlarda daha iyi görünmesi için md ve sm eklendi */}
                     <Card>
@@ -28,7 +31,7 @@ export default function Login() {
                                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                                     <Form.Check type="checkbox" label="Beni Hatırla" /> {/* Label güncellendi */}
                                 </Form.Group>
-                                <Button variant="primary" type="submit" className="w-100"> {/* Buton tam genişlik yapıldı */}
+                                <Button variant={theme ? "light" : "dark"} type="submit" className="w-100"> {/* Buton tam genişlik yapıldı */}
                                     Giriş Yap
                                 </Button>
                             </Form>
@@ -54,7 +57,7 @@ export default function Login() {
                                     Facebook ile Giriş Yap
                                     <FaFacebook className="ms-2" />
                                 </Button>
-                                <Button variant="outline-dark" className="mb-2">
+                                <Button variant={theme ? "outline-light" : "outline-dark"} className="mb-2">
 
                                     Twitter ile Giriş Yap
                                     < FaXTwitter className="ms-2" />

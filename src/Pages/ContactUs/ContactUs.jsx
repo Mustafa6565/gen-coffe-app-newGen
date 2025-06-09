@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
+import { StateControll } from "../../Context/StateControl";
 
 export default function ContactUs() {
+    const { theme } = useContext(StateControll)
     const optionContact = [
         { id: 1, title: "Teknik Destek." },
         { id: 2, title: "Şikayet Veya Öneri." },
@@ -9,7 +12,7 @@ export default function ContactUs() {
 
     ]
     return (
-        <Container className="mt-3 mb-3 p-3 shadow" style={{ border: "2px solid #FED8B1" }}>
+        <Container className={` mt-3 mb-3 p-3 shadow ${theme ? 'bg-dark text-white' : 'bg-ligth'}`} data-bs-theme={theme ? "dark" : "ligth"} style={{ border: "2px solid #FED8B1" }}>
             <Row className="d-flex justify-content-center">
                 <Col className="" lg="8">
                     <h3 className="text-center mb-4 ">Barista Atölyesine Mesajını İlet</h3>

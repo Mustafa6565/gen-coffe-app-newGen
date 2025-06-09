@@ -1,12 +1,14 @@
 import { Card, Col, Container, Row, Spinner, Table } from "react-bootstrap";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import apiService from "../api/apiService";
 import { Link, useParams } from "react-router-dom";
+import { StateControll } from "../Context/StateControl";
 
 function CoffeMethodDetail() {
     const [coffeeDetail, setCoffeeDetail] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const { theme } = useContext(StateControll)
     const { id } = useParams();
 
     useEffect(() => {
@@ -44,9 +46,9 @@ function CoffeMethodDetail() {
 
 
     return (
-        <Container className="mt-3 mb-3 shadow p-3 " style={{ border: "2px solid #FED8B1" }}>
+        <Container className={`shadow ${theme ? 'bg-dark text-white' : 'bg-ligth'}`} style={{ border: "2px solid #FED8B1" }}>
             {coffeeDetail ? (
-                <Card className="     gap-5">
+                <Card data-bs-theme={theme ? "dark" : "ligth"} className={`mt-3 p-3 mb-3 shadow ${theme ? 'bg-dark' : 'bg-ligth'}`} >
                     <Card.Header className="text-center HeadLine">
                         <h2>{coffeeDetail.name}</h2>
                     </Card.Header>

@@ -2,8 +2,11 @@ import { useContext, useState } from "react";
 import RouterLink from "./RouterLink";
 import { Badge, Button, Container, Image, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { StateControll } from "../Context/StateControl";
+import { BsSun } from "react-icons/bs";
+import { MdDarkMode } from "react-icons/md";
 
 export default function NavigationBar() {
+    const { theme, handleSetTheme } = useContext(StateControll)
     const [showMenu, setShowMenu] = useState(false);
     const { favoriteEspressoIds } = useContext(StateControll)
     const navigate = [
@@ -20,7 +23,7 @@ export default function NavigationBar() {
     return (
         <div className="container-fluid">
 
-            <Navbar collapseOnSelect className="rounded mt-2 shadow" expand="lg" bg="ligth" data-bs-theme="ligth" style={{ border: "2px solid #FED8B1" }}>
+            <Navbar collapseOnSelect className="rounded mt-2 shadow" expand="lg" bg={theme ? "dark" : "ligth"} data-bs-theme={theme ? "dark" : "ligth"} style={{ border: "2px solid #FED8B1" }}>
                 <Container>
                     <Navbar.Brand href="/home">
 
@@ -32,10 +35,10 @@ export default function NavigationBar() {
 
                         <Nav>
                             <NavDropdown title="Coffe's">
-                                <NavDropdown.Item style={{ border: "2px solid #FED8B1 ", borderBottom: "none" }} href="/coffes">
+                                <NavDropdown.Item href="/coffes">
                                     Demleme YÖntemleri
                                 </NavDropdown.Item>
-                                <NavDropdown.Item style={{ border: "2px solid #FED8B1 ", borderTop: "none" }} href="/espressos">
+                                <NavDropdown.Item href="/espressos">
                                     Espresso Çekirdeği
                                 </NavDropdown.Item>
                             </NavDropdown>
@@ -50,10 +53,13 @@ export default function NavigationBar() {
                         <Nav>
                             <Nav.Link href="/login">Giriş Yap</Nav.Link>
                             <Nav.Link href="#register">Kayıt Ol</Nav.Link>
+
                         </Nav>
 
 
-
+                        <Nav>
+                            <Button onClick={handleSetTheme} variant={theme ? "warning" : "warning"}>{theme ? <BsSun /> : <MdDarkMode />}</Button>
+                        </Nav>
                     </Navbar.Collapse>
                     <Button className="ms-2" href="/favoriler" variant={"warning"}>
                         Favoriler

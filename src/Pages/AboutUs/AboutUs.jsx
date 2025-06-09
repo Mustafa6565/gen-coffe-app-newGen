@@ -1,9 +1,13 @@
+import { useContext } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { FaCoffee, FaHeart, FaHandsHelping, FaLeaf } from "react-icons/fa"; // İkonlar için react-icons kütüphanesini kurmanız gerekebilir: npm install react-icons
+import { StateControll } from "../../Context/StateControl";
 
 export default function AboutUs() {
+    const { theme } = useContext(StateControll)
+
     return (
-        <Container className="mt-5 mb-5 shadow p-4 rounded" style={{ border: "2px solid #FED8B1" }}>
+        <Container className={` mt-3 mb-3 p-3 shadow ${theme ? 'bg-dark text-white' : 'bg-ligth'}`} data-bs-theme={theme ? "dark" : "ligth"} style={{ border: "2px solid #FED8B1" }}>
             <h1 className="text-center mb-4 HeadLine">Barista Atölyesi Hakkında</h1>
             <p className="text-center lead mb-5">
                 Kahveye olan tutkumuzla yola çıktık ve bu tutkuyu sizlerle paylaşmak için Barista Atölyesi'ni kurduk.

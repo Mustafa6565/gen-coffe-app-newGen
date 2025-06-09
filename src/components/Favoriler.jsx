@@ -7,7 +7,7 @@ import FavoriChoise from "./FavariChoise";
 
 function Favoriler() {
 
-    const { favoriteEspressoBeans, loadingFavoriteBeans, errorFavoriteBeans, favoriteEspressoIds } = useContext(StateControll)
+    const { favoriteEspressoBeans, loadingFavoriteBeans, errorFavoriteBeans, favoriteEspressoIds, theme } = useContext(StateControll)
     if (loadingFavoriteBeans) {
         <Container className="mt-3 mb-3 p-3 shadow">
             <Spinner variant="grow" />
@@ -22,11 +22,11 @@ function Favoriler() {
     return (
         <>
 
-            <Container className="mt-3 mb-3 p-3 shadow" style={{ border: "2px solid #FED8B1" }}>
+            <Container className={`mt-3 p-3 mb-3 shadow ${theme ? 'bg-dark' : 'bg-ligth'}`} style={{ border: "2px solid #FED8B1" }}>
                 <Row className="">
                     {favoriteEspressoBeans.length !== 0 ? <Col lg="12" md="6" sm="4">
                         <h2 className="text-center mb-2">Favori Espresso Çekirdeklerin</h2>
-                        <Table variant="kg" className="m-2">
+                        <Table variant={theme ? "dark" : "ligth"} className="m-2">
                             <thead>
                                 <tr>
                                     <th></th>
@@ -77,7 +77,7 @@ function Favoriler() {
                     </Col> :
                         <Col>
 
-                            <Alert>Henüz Favori Seçimin Yok...<br /> <Alert.Link href="/espressos">Espreeso </Alert.Link>Çekirdeklerine bak</Alert>
+                            <Alert variant={theme ? "dark" : "success"}>Henüz Favori Seçimin Yok...<br /> <Alert.Link href="/espressos">Espreeso </Alert.Link>Çekirdeklerine bak</Alert>
 
                         </Col>
                     }
