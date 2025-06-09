@@ -31,7 +31,7 @@ function CoffeeMethodsList() {
     }
 
     return (
-        <><Container className="mt-3 mb-3  shadow ">
+        <><Container className="mt-3 mb-3  shadow " style={{ border: "2px solid #FED8B1" }}>
             <h2 className="text-center mb-4">Kahve Demleme Yöntemleri</h2>
             <Row className="justify-content-around" >
                 {coffees.map((coffee) => (

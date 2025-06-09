@@ -22,7 +22,7 @@ function Favoriler() {
     return (
         <>
 
-            <Container className="mt-3 mb-3 p-3 shadow">
+            <Container className="mt-3 mb-3 p-3 shadow" style={{ border: "2px solid #FED8B1" }}>
                 <Row className="">
                     {favoriteEspressoBeans.length !== 0 ? <Col lg="12" md="6" sm="4">
                         <h2 className="text-center mb-2">Favori Espresso Çekirdeklerin</h2>

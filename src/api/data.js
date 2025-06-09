@@ -65,8 +65,18 @@ const UsersData = [
 // Örneğin, Barista İpuçları, Kurslar veya Etkinlikler
 const AdditionalData = {
     tips: [
+
         { id: 'tip-1', title: "Espresso Akışını Ayarlamak", content: "Mükemmel akış için öğütme inceliği anahtardır." },
-        { id: 'tip-2', title: "Süt Köpürtme Teknikleri", content: "Latte art için pürüzsüz ve parlak süt köpüğü..." }
+        { id: 'tip-2', title: "Süt Köpürtme Teknikleri", content: "Latte art için pürüzsüz ve parlak süt köpüğü..." },
+        { id: 'tip-3', title: "French Press İle Demleme", content: "Kalın öğütülmüş kahve ve doğru demleme süresi zengin bir tat sunar." },
+        { id: 'tip-4', title: "Chemex Kullanımı", content: "Temiz ve berrak bir kahve deneyimi için Chemex filtre kağıtları önemli." },
+        { id: 'tip-5', title: "V60 Dökme Kahve", content: "Kontrollü döküş ve doğru su sıcaklığı, en iyi V60 sonuçlarını verir." },
+        { id: 'tip-6', title: "Kahve Çekirdeklerini Saklama", content: "Çekirdekleri hava almayan, ışık görmeyen serin ve kuru bir yerde saklayın." },
+        { id: 'tip-7', title: "Su Kalitesinin Önemi", content: "Kahve demlemede kullanılan suyun kalitesi, tadı büyük ölçüde etkiler." },
+        { id: 'tip-8', title: "Tazelik Takibi", content: "Yeni kavrulmuş kahve çekirdekleri, demleme sonrası en iyi aromayı verir." },
+        { id: 'tip-9', title: "Soğuk Demleme (Cold Brew)", content: "Uzun demleme süresiyle pürüzsüz ve az asitli kahve elde edin." },
+        { id: 'tip-10', title: "Moka Pot Kullanımı", content: "Yoğun ve espresso benzeri bir kahve için Moka Pot idealdir." }
+
     ],
     courses: [
         { id: 'course-1', name: "Temel Barista Eğitimi", duration: "2 Gün", price: "XXX TL" },

@@ -20,7 +20,7 @@ export default function NavigationBar() {
     return (
         <div className="container-fluid">
 
-            <Navbar collapseOnSelect className="rounded mt-2 shadow" expand="lg" bg="ligth" data-bs-theme="ligth">
+            <Navbar collapseOnSelect className="rounded mt-2 shadow" expand="lg" bg="ligth" data-bs-theme="ligth" style={{ border: "2px solid #FED8B1" }}>
                 <Container>
                     <Navbar.Brand href="/home">
 
@@ -32,10 +32,10 @@ export default function NavigationBar() {
 
                         <Nav>
                             <NavDropdown title="Coffe's">
-                                <NavDropdown.Item href="/coffes">
+                                <NavDropdown.Item style={{ border: "2px solid #FED8B1 ", borderBottom: "none" }} href="/coffes">
                                     Demleme YÖntemleri
                                 </NavDropdown.Item>
-                                <NavDropdown.Item href="/espressos">
+                                <NavDropdown.Item style={{ border: "2px solid #FED8B1 ", borderTop: "none" }} href="/espressos">
                                     Espresso Çekirdeği
                                 </NavDropdown.Item>
                             </NavDropdown>

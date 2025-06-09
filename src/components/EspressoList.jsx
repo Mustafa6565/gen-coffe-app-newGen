@@ -46,7 +46,7 @@ export default function EspressoList() {
     }
 
     return (
-        <Container className="mt-3 mb-3 shadow text-center">
+        <Container className="mt-3 mb-3 shadow text-center" style={{ border: "2px solid #FED8B1" }}>
             <h2 className="mb-2">Espresso Çeşitleri</h2>
             <Row className="justify-content-around text-start">
                 {espresso.map((bean) => {

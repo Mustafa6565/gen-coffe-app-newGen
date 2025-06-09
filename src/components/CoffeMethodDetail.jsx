@@ -44,7 +44,7 @@ function CoffeMethodDetail() {
 
 
     return (
-        <Container className="mt-3 mb-3 shadow p-3">
+        <Container className="mt-3 mb-3 shadow p-3 " style={{ border: "2px solid #FED8B1" }}>
             {coffeeDetail ? (
                 <Card className="     gap-5">
                     <Card.Header className="text-center HeadLine">

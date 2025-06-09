@@ -9,7 +9,7 @@ export default function ContactUs() {
 
     ]
     return (
-        <Container className="mt-3 mb-3 p-3 shadow">
+        <Container className="mt-3 mb-3 p-3 shadow" style={{ border: "2px solid #FED8B1" }}>
             <Row className="d-flex justify-content-center">
                 <Col className="" lg="8">
                     <h3 className="text-center mb-4 ">Barista Atölyesine Mesajını İlet</h3>
