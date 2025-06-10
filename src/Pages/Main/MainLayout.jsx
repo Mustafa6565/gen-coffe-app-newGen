@@ -10,7 +10,7 @@ import { StateControll } from "../../Context/StateControl";
 export default function MainLayout() {
     const { theme } = useContext(StateControll)
     return (
-        <div className={`${theme ? "bg-secondary" : "bg-ligth"} pt-2`}>
+        <div className={`${theme ? "bg-dark" : "bg-ligth"} pt-2`}>
 
 
 

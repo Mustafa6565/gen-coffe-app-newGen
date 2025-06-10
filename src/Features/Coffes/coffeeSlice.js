@@ -28,6 +28,17 @@ export const fetchEspressos = createAsyncThunk(
         }
     }
 );
+export const fetchBlogPost = createAsyncThunk(
+    'blogs/fetchBlogPost',
+    async (_, { rejectWithValue }) => {
+        try {
+            const response = await apiService.getAllBlogPosts();
+            return response;
+        } catch (error) {
+            return rejectWithValue("Blog Yazıları Yüklenirken Bir Hata Oluştu.")
+        }
+    }
+)
 
 
 //      Espresso Slice
@@ -59,6 +70,35 @@ const espressoSlice = createSlice({
             })
     },
 })
+//      Blog Post Slice
+const blogSlice = createSlice({
+    name: 'blogs',
+    initialState: {
+        items: [],
+        loading: 'idle',
+        error: null,
+    },
+    reducers: {
+
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(fetchBlogPost.pending, (state) => {
+                state.loading = 'pending';
+                state.error = null;
+            })
+            .addCase(fetchBlogPost.fulfilled, (state, action) => {
+                state.loading = 'succeeded';
+                state.items = action.payload;
+            })
+            .addCase(fetchBlogPost.rejected, (state, action) => {
+                state.loading = 'failed';
+                state.error = action.payload || 'Bilinmeyen Bir Hata Oluştu.';
+                state.items = [];
+            })
+    },
+});
+
 
 //      Coffees Slice
 
@@ -92,3 +132,5 @@ const coffeeSlice = createSlice({
 });
 export const espressoReducer = espressoSlice.reducer;
 export const coffeeReducer = coffeeSlice.reducer;
+export const blogReducer = blogSlice.reducer;
+

@@ -1,13 +1,14 @@
 import { Container, Row } from 'react-bootstrap';
 import Carousel from 'react-bootstrap/Carousel';
 import apiService from '../api/apiService';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { StateControll } from '../Context/StateControl';
 
 function Slider() {
     const [coffees, setCoffees] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
+    const { theme } = useContext(StateControll)
     useEffect(() => {
         const fetchCoffees = async () => {
             try {
@@ -43,17 +44,15 @@ function Slider() {
     }
 
     return (
-        <Container data-bs-theme={"dark"} className='mt-3 mb-3 p-3 shadow' style={{ border: "2px solid #FED8B1" }}>
-            <Carousel interval={4000} variant='success' >
+        <Container data-bs-theme={theme ? "ligth" : "dark"} className={`mt-3 mb-3 p-3 shadow ${theme ? 'bg-dark' : 'bg-ligth'}`} style={{ border: "2px solid #FED8B1" }}>
+            <Carousel interval={4000} >
                 {coffees?.tips?.map((data) => (
-                    <Carousel.Item className='text-center p-5' key={data.id}>
-                        <Row >
-                            <h3>{data.title} </h3>
+                    <Carousel.Item className='text-center p-4' key={data.id}>
+                        <Row className='text-color-white '  >
+                            <h5>{data.title} </h5>
                             <p>{data.content} </p>
                         </Row>
-                        <Carousel.Caption>
 
-                        </Carousel.Caption>
                     </Carousel.Item>
                 ))}
             </Carousel>

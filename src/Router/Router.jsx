@@ -8,6 +8,7 @@ import Espressos from "../Pages/Espressos/Espressos";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 import CoffeMethodDetail from "../components/CoffeMethodDetail";
 import Favoriler from "../components/Favoriler";
+import Blog from "../Pages/Blog/Blog";
 
 export const Router = createBrowserRouter([
     { index: true, element: <MainLayout /> },
@@ -27,6 +28,8 @@ export const Router = createBrowserRouter([
             { path: "aboutus", element: <AboutUs /> },
             { path: "login", element: <Login /> },
             { path: "contactus", element: <ContactUs /> },
+            { path: "blog", element: <Blog /> },
+
             { path: "favoriler", element: <Favoriler /> },
 
 

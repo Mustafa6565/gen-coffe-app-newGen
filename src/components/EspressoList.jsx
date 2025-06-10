@@ -46,7 +46,7 @@ export default function EspressoList() {
         <Container className={` mt-3 mb-3 p-3 shadow ${theme ? 'bg-dark text-white' : 'bg-ligth'}`} data-bs-theme={theme ? "dark" : "ligth"} style={{ border: "2px solid #FED8B1" }}>
             <h3>Espreeso Çekirdekleri</h3>
 
-            <Row className="justify-content-around text-start">
+            <Row className="justify-content-around text-start ">
                 {espressos.map((bean) => {
 
                     const isFavorite = favoriteEspressoIds.includes(bean.id);

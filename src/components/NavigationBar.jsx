@@ -13,6 +13,8 @@ export default function NavigationBar() {
         { id: 1, title: "Home", to: "/home" },
         { id: 2, title: "About Us", to: "/aboutus" },
         { id: 5, title: "İletişim", to: "/contactus" },
+        { id: 5, title: "Blog", to: "/blog" },
+
 
 
     ]
@@ -58,10 +60,10 @@ export default function NavigationBar() {
 
 
                         <Nav>
-                            <Button onClick={handleSetTheme} variant={theme ? "warning" : "warning"}>{theme ? <BsSun /> : <MdDarkMode />}</Button>
+                            <Button className="btn-sm" onClick={handleSetTheme} variant={theme ? "warning" : "warning"}>{theme ? <BsSun /> : <MdDarkMode />}</Button>
                         </Nav>
                     </Navbar.Collapse>
-                    <Button className="ms-2" href="/favoriler" variant={"warning"}>
+                    <Button className="ms-2 btn-sm" href="/favoriler" variant={"warning"}>
                         Favoriler
                         <Badge className="ms-1" bg="dark">{favoriteEspressoIds.length}</Badge>
 
